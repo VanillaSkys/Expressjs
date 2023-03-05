@@ -1,6 +1,6 @@
 version: '1'
 services:
-  mysql-server:
+  db:
     image: mysql:latest
     networks:
       - backend
