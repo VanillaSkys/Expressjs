@@ -9,6 +9,9 @@ const morgan = require('morgan');
 const logger = require('./configs/logger.config');
 require('./configs/backup.config');
 
+require('./models/admin.model')
+require('./models/product.model')
+
 app.use(cors());
 app.use(bodyParser.json({limit: "100mb"}));
 app.use(bodyParser.urlencoded({
