@@ -1,6 +1,6 @@
 const mysqlDump = require('mysqldump');
 const schedule = require('node-schedule');
-
+require('dotenv').config();
 function BackUp() {
     try {
         let ts = Date.now();

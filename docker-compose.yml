@@ -1,6 +1,6 @@
 version: '1'
 networks:
-  backend:
+  backend-network:
 volumes:
   db1_data:
 services:
@@ -10,7 +10,7 @@ services:
       - db1_data:/var/lib/mysql
     restart: always
     networks:
-      - backend
+      - backend-network
     ports:
       - "3306:3306"
     environment:
@@ -19,7 +19,8 @@ services:
   web:
     build: ./
     networks:
-      - backend
+      - backend-network
+    restart: always
     ports:
       - "5000:5000"
     container_name: web
