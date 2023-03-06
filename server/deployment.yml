@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: express-deployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: express

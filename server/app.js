@@ -24,4 +24,7 @@ app.use(morgan('dev'));
 
 
 app.use('/', require('./routes'));
+app.get('/', (req,res) => {
+    res.send("Hello"+ process.env.TEST)
+})
 module.exports = app;
