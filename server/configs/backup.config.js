@@ -13,11 +13,11 @@ function BackUp() {
 
         mysqlDump({
             connection: {
-                host: process.env.db_host,
-                port: process.env.db_port,
-                user: process.env.db_user,
-                password: process.env.db_password,
-                database: process.env.db_name
+                host: process.env.db_host || 'localhost',
+                port: process.env.db_port || 3306,
+                user: process.env.db_user || 'root',
+                password: process.env.db_password || '123456789',
+                database: process.env.db_name || 'expressjs'
             },
             dumpToFile: `./backup/${year}-${month}-${day}-backup.sql`,
         });
